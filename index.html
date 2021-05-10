@@ -1,259 +1,91 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>car sale</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style>
+        body { margin: 0; padding: 0; }
+        html { height: 100%; cursor: default; }
+        body {
+            font-family: "Roboto", sans-serif; /* Default font */
+            width: 100%; height: 100%;
+            text-align: center;
+            display: table;
+            opacity: 1;
+            animation: fadein 3s forwards;
+        }
+        h2 {
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+        img {
+            width: 25%; /* Image width */
+            border: 0; /* For IE */
+        }
+        #main {
+            vertical-align: middle;
+            display: table-cell;
+        }
+        /* Progress bar */
+        #progress {
+            width: 45%; /* Bar width */
+            margin: 0 auto;
+            border-radius: 10px; /* Roundness */
+            background-color: #161616; /* Background colour */
+            padding: 7px 5px;
+            /* border: 5px solid #a8a8a8; Border */
+        }
+        #fill {
+            padding: 2px 0;
+            background-color: #adacac; /* Fill colour */
+            width: 23%; /* Bar percentage, change text below also */
+            border-radius: 25px; /* Roundness */
+            animation: proanimate 2s;
+        }
+        #barpercent h3 {
+            color: white; /* Bar percentage text colour */
+            margin: 0; padding: 0;
+            opacity: 1;
+            animation: fadein 3s forwards;
+        }
 
+        /* Fades in animation */
+        @keyframes fadein  {
+            from { opacity: 0; }
+        }
+        /* Animates bar on page load */
+        @keyframes proanimate {
+            from { width: 0%; }
+        }
+
+        @media screen and (max-width:600px) {
+            img {
+                width: 60%;
+            }
+            h1 {
+                font-size: 2.4em;
+            }
+            h2 {
+                margin: 1.1em;
+                font-size: 1.1em;
+            }
+            #progress {
+                width: 80%; /* Bar width */
+            }
+        }
+    </style>
+    <title>Brand is Nothing</title>
+    <link rel="shortcut icon" type="image/png" href="images/keyps.png"/>
 </head>
-
-<body>
-    <div class="extendedrow container">
-        <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle></button>
-            <div class="title-bar-title">Menu</div>
-        </div>
-        <div data-sticky-container>
-            <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu" data-dropdown-menu>
-                        <li class="menu-text"><a href="index.html">Car Sale</a></li>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">contact</a></li>
-                    </ul>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li> <a href="signin.html" data-reveal-id="myModal">Sign In</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="extendedrow hero">
-            <div class="large-4 column sidebar">
-                <input type="search" placeholder="Search">
-                <br>
-                <p><a href="subaru.html"> SUBARU</a>
-                    <br>
-                </p>
-                <p><a href="BMW.html">BMW</a>
-                    <br>
-                </p>
-                <p><a href="toyota.html">TOYOTA</a>
-                    <br>
-                </p>
-                <p><a href="audi.html">AUDI</a></p>
-                <br>
-
-            </div>
-            <div class="large-8 column slideshow">
-                <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-                    <ul class="orbit-container">
-                        <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-                        <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-                        <li class="is-active orbit-slide">
-                            <img class="orbit-image" src="image/maxresdefault.jpg" alt="img-1">
-                            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-                        </li>
-                        <li class="orbit-slide">
-                            <img class="orbit-image" src="image/Bentley_Mulsanne.jpeg" alt="Space">
-                            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-                        </li>
-                        <li class="orbit-slide">
-                            <img class="orbit-image" src="image/2016-mercedes-maybach-s600.jpeg" alt="Space">
-                            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-                        </li>
-                        <li class="orbit-slide">
-                            <img class="orbit-image" src="image/black-mercedes-benz-g-wagon.jpeg" alt="Space">
-                            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="extendedrow content">
-            <div class="extendedrow small-up-2 medium-up-3 large-up-4">
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="image-wrapper overlay-fade-in-new-background">
-                        <img class="thumbnail" src="image/2016-mercedes-maybach-s600.jpeg" />
-                        <div class="image-overlay-content">
-                            <h2>.overlay-fade-in-new-background</h2>
-                            <p class="price">$189,000</p>
-                            <a href="#" class="button">Want!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="extendedrow">
-            <footer class="footer">
-  <div class="row">
-    <div class="small-12 medium-6 medium-push-6 columns">
-      <p class="logo show-for-small-only"><i class="fi-target"></i> FIGHT CLUB</p>
-      <form class="footer-form">
-        <div class="row">
-          <div class="medium-9 medium-push-3 columns">
-            <label>
-              <label for="email" class="contact">Contact Us</label>
-              <input type="email" id="email" placeholder="Email Address" />
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="medium-9 medium-push-3 columns">
-            <label>
-              <textarea rows="5" id="message" placeholder="Message"></textarea>
-            </label>
-          </div>
-          <div class="row">
-            <div class="medium-9 medium-push-3 columns">
-              <button class="submit" type="submit" value="Submit">Send</button>
-            </div>
-          </div>
-        </div>
-      </form>
+<body style="background-color: black;">
+    <div id="main">
+        <img src="images/keyps.png" alt="Logo Image"
+        style="width:20%;">
+        <h1 style= "color:#adacac; font-size:60px;">YAKINDA!</h1>
+        <h2 style="color:#adacac;">Capital was here</h2>
+        <div id="progress"><div id="fill"><div id="barpercent"><h3></h3></div></div></div>
     </div>
-    <div class="small-12 medium-6 medium-pull-6 columns">
-      <p class="logo hide-for-small-only"><i class="fi-target"></i>Car Sale</p>
-      <p class="footer-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </p>
-      <ul class="inline-list social">
-        <a href="#"><i class="fi-social-facebook"></i></a>
-        <a href="#"><i class="fi-social-twitter"></i></a>
-        <a href="#"><i class="fi-social-linkedin"></i></a>
-        <a href="#"><i class="fi-social-github"></i></a>
-      </ul>
-      <p class="copywrite">©2016</p>
-    </div>
-  </div>
-</footer>
-        </div>
-    </div>
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </body>
-
 </html>
