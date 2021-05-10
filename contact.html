@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AutoSell - Sell your used car now</title>
+    <title>AutoSell - Contact Us</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -121,8 +121,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="login.php">Login</a>
-                            </li>
-                            <li>
+                            </li><li>
                                 <a href="register.php" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=550,toolbar=1,resizable=0'); return false;" >Register</a>
                             </li>
@@ -140,166 +139,100 @@
         </div>
         <!-- /.container -->
     </nav>
-    
-    <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url(images/auris.jpg);"></div>
-                <div class="carousel-caption">
-                    <h2>Toyota Auris</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url(images/bmw3.jpg);"></div>
-                <div class="carousel-caption">
-                    <h2>BMW 3 Series</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url(images/megane.jpeg);"></div>
-                <div class="carousel-caption">
-                    <h2>Renault Megane</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </header>
     <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Latest 
-                    <small>Ads</small>
+                <h1 class="page-header">Contact
+                    <small>Us</small>
                 </h1>
-               
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Contact</li>
+                </ol>
             </div>
         </div>
         <!-- /.row -->
 
-        <!-- Projects Row -->
+        <!-- Content Row -->
         <div class="row">
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/mondeo.jpg" alt="">
-               
-                <h3>
-                    Ford Mondeo 141</h3> <h4>&#8364;15,000</h4>
-                    
-                <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 29,000<br>Location: Galway<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=52.245775,-7.1395177&amp;t=m&amp;z=16&amp;output=embed"></iframe>
             </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/insignia.jpeg" alt="">
-                
-                <h3>
-                    Opel Insignia 2009</h3> <h4>&#8364;4500</h4>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>Contact Details</h3>
+                <p>
+                   AutoSell<br>Waterford Institute Of Technology<br>Cork Road<br>Waterford
+                </p>
+                <p><i class="fa fa-phone"></i> 
+                    <abbr title="Phone">P</abbr>: 087 1377 333</p>
+                <p><i class="fa fa-envelope-o"></i> 
+                    <abbr title="Email">E</abbr>: <a href="bonjo1983@gmail.com">info@autosell.ie</a>
+                </p>
+                <p><i class="fa fa-clock-o"></i> 
+                    <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="https://www.facebook.com/bonjo.thompson.9"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
                     
-                 <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 35,000<br>Location: Galway<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/auris.jpg" alt="">
-                
-                <h3>
-                    Toyota Auris 2015</h3> <h4>&#8364;17,750</h4>
-                 <p>Fuel: Petrol<br>Engine: 1.4ltr<br>KM: 18,000<br>Location: Cork<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
+                    <li>
+                        <a href="https://twitter.com/bonjo7"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    
+                </ul>
             </div>
         </div>
         <!-- /.row -->
 
-        <!-- Projects Row -->
+        <!-- Contact Form -->
+        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/bmw3.jpg" alt="">
-                
-                <h3>
-                    BMW 3 Series 2005</h3> <h4>&#8364;8,000</h4>
-                    
-                <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 65,000<br>Location: Waterford<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
+            <div class="col-md-8">
+                <h3>Send us a Message</h3>
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Phone Number:</label>
+                            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Email Address:</label>
+                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Message:</label>
+                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/fmondeo.jpeg" alt="">
-                
-                <h3>
-                    Ford Mondeo 2002</h3> <h4>&#8364;2500</h4>
-                    
-                <p>Fuel: Diesel<br>Engine: 2.2ltr<br>KM: 35,000<br>Location: Cavan<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-               
-                    <img class="img-responsive img-hover" src="images/megane.jpeg" alt="">
-                
-                <h3>
-                    Renault Megane 2002</h3> <h4>&#8364;3,175</h4>
-                    
-                <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 87,500<br>Location: Galway<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-        </div>
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/quashai.jpg" alt="">
-               
-                <h3>
-                   Nissian Quashi 2010</h3> <h4>&#8364;10,000</h4>
-                   
-                <p>Fuel: Diesel<br>Engine: 1.5ltr<br>KM: 35,000<br>Location: Cork<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/vwbora.jpg" alt="">
-             
-                <h3>
-                    VW Bora 2002</h3> <h4>&#8364;1800</h4>
-                <p>Fuel: Diesel<br>Engine: 1.8ltr<br>KM: 210,050<br>Location: Wexford<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/smax.jpg" alt="">
-                
-                <h3>
-                    Ford S-Max 1998</h3> <h4>&#8364;2,000</h4>
-                    
-                 <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 165,000<br>Location: Dublin<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
         </div>
-        
         <!-- /.row -->
-	<hr>
-    
-    
 
+        <hr>
 
         <!-- Footer -->
         <footer>
@@ -318,6 +251,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
 
 </body>
 

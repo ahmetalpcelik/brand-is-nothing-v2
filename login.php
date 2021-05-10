@@ -1,3 +1,25 @@
+<?php
+session_start();
+//connect to database
+$db=mysqli_connect("localhost","root","","authentication");
+if(isset($_POST['login_btn']))
+{
+    $username=mysql_real_escape_string($_POST['username']);
+    $password=mysql_real_escape_string($_POST['password']);
+    $sql=" SELECT * FROM users WHERE username='$username' AND password='$password' ";
+    $result=mysqli_query($db,$sql);
+    if(mysqli_num_rows($result) == 1)
+    {
+        $_SESSION['message']="<span style='color: green'> You are now Loggged In";
+		header("location: addcar.php");
+    }
+   else
+   {
+        $_SESSION['message']="<span style='color: red'>Username and Password combiation incorrect";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +31,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AutoSell - Sell your used car now</title>
+    <title>AutoSell - Login</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -121,8 +143,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="login.php">Login</a>
-                            </li>
-                            <li>
+                            </li><li>
                                 <a href="register.php" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=550,toolbar=1,resizable=0'); return false;" >Register</a>
                             </li>
@@ -141,165 +162,75 @@
         <!-- /.container -->
     </nav>
     
-    <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url(images/auris.jpg);"></div>
-                <div class="carousel-caption">
-                    <h2>Toyota Auris</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url(images/bmw3.jpg);"></div>
-                <div class="carousel-caption">
-                    <h2>BMW 3 Series</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url(images/megane.jpeg);"></div>
-                <div class="carousel-caption">
-                    <h2>Renault Megane</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </header>
+   
     <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
+         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Latest 
-                    <small>Ads</small>
+                <h1 class="page-header">Login
+                    
                 </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    
+                    <li class="active">Login</li>
+                </ol>
                
             </div>
         </div>
         <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 img-portfolio">
+                <div class="row">
+                <div class="col-lg-12">
                 
-                    <img class="img-responsive img-hover" src="images/mondeo.jpg" alt="">
-               
+                <ol class="breadcrumb">
                 <h3>
-                    Ford Mondeo 141</h3> <h4>&#8364;15,000</h4>
-                    
-                <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 29,000<br>Location: Galway<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
+                <?php
+					if(isset($_SESSION['message']))
+					{
+							echo "<div id='error_msg'>".$_SESSION['message']."</div>";
+							unset($_SESSION['message']);
+					}
+				?>
+                </h3>
+                </ol>
+                </div>
+                <br>
+                 <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i>Enter your details</h4>
+                    </div>
+                    <div class="panel-body">
+                <form method="post" action="login.php">
                 
-                    <img class="img-responsive img-hover" src="images/insignia.jpeg" alt="">
+                	<table>
+                    	<tr>
+                        	<td>Username:</td>
+                            <td><input type="text" name="username" class="textInput"></td>
+                        </tr>
+                        
+                        <tr>
+                        	<td>Password:</td>
+                            <td><input type="password" name="password" class="textInput"></td>
+                        </tr>
+                        
+                        
+                        <tr>
+                        	<td></td>
+                            <td><input type="submit" name="login_btn" value="Login"></td>
+                        </tr>
+                    </table>
                 
-                <h3>
-                    Opel Insignia 2009</h3> <h4>&#8364;4500</h4>
-                    
-                 <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 35,000<br>Location: Galway<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/auris.jpg" alt="">
-                
-                <h3>
-                    Toyota Auris 2015</h3> <h4>&#8364;17,750</h4>
-                 <p>Fuel: Petrol<br>Engine: 1.4ltr<br>KM: 18,000<br>Location: Cork<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
+                </form>
+                </div></div></div>
         </div>
         <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/bmw3.jpg" alt="">
-                
-                <h3>
-                    BMW 3 Series 2005</h3> <h4>&#8364;8,000</h4>
-                    
-                <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 65,000<br>Location: Waterford<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/fmondeo.jpeg" alt="">
-                
-                <h3>
-                    Ford Mondeo 2002</h3> <h4>&#8364;2500</h4>
-                    
-                <p>Fuel: Diesel<br>Engine: 2.2ltr<br>KM: 35,000<br>Location: Cavan<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-               
-                    <img class="img-responsive img-hover" src="images/megane.jpeg" alt="">
-                
-                <h3>
-                    Renault Megane 2002</h3> <h4>&#8364;3,175</h4>
-                    
-                <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 87,500<br>Location: Galway<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-        </div>
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/quashai.jpg" alt="">
-               
-                <h3>
-                   Nissian Quashi 2010</h3> <h4>&#8364;10,000</h4>
-                   
-                <p>Fuel: Diesel<br>Engine: 1.5ltr<br>KM: 35,000<br>Location: Cork<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/vwbora.jpg" alt="">
-             
-                <h3>
-                    VW Bora 2002</h3> <h4>&#8364;1800</h4>
-                <p>Fuel: Diesel<br>Engine: 1.8ltr<br>KM: 210,050<br>Location: Wexford<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                
-                    <img class="img-responsive img-hover" src="images/smax.jpg" alt="">
-                
-                <h3>
-                    Ford S-Max 1998</h3> <h4>&#8364;2,000</h4>
-                    
-                 <p>Fuel: Petrol<br>Engine: 1.8ltr<br>KM: 165,000<br>Location: Dublin<p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">John</abbr>: 087 1377 333</p>
-            </div>
-        </div>
-        
-        <!-- /.row -->
-	<hr>
-    
-    
-
+        <hr>
 
         <!-- Footer -->
         <footer>
